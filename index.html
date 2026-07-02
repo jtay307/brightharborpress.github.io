@@ -843,19 +843,34 @@
     <nav id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <svg width="180" height="50" viewBox="0 0 380 100">
-                    <g transform="translate(12, 18)">
-                        <rect x="22" y="30" width="14" height="38" fill="#2c4a5e"/>
-                        <rect x="20" y="25" width="18" height="6" fill="#2c4a5e"/>
-                        <rect x="24" y="17" width="10" height="9" fill="#c9956c"/>
-                        <polygon points="29,8 18,17 40,17" fill="#2c4a5e"/>
-                        <line x1="34" y1="19" x2="46" y2="15" stroke="#c9956c" stroke-width="1.5" stroke-linecap="round"/>
-                        <line x1="34" y1="22" x2="48" y2="22" stroke="#c9956c" stroke-width="1.5" stroke-linecap="round"/>
-                        <line x1="34" y1="25" x2="46" y2="29" stroke="#c9956c" stroke-width="1.5" stroke-linecap="round"/>
+                <svg width="210" height="50" viewBox="0 0 420 100" aria-label="BrightHarbor Press logo">
+                    <g transform="translate(8, 14)">
+                        <!-- Left page of open book -->
+                        <path d="M36,8 C28,8 16,12 10,16 L10,64 C16,60 28,58 36,58 Z" fill="#2c4a5e"/>
+                        <!-- Right page -->
+                        <path d="M36,8 C44,8 56,12 62,16 L62,64 C56,60 44,58 36,58 Z" fill="#1a2a3a"/>
+                        <!-- Spine -->
+                        <line x1="36" y1="8" x2="36" y2="58" stroke="#c9956c" stroke-width="2"/>
+                        <!-- Left page lines -->
+                        <line x1="16" y1="24" x2="32" y2="22" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+                        <line x1="16" y1="32" x2="32" y2="30" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.7"/>
+                        <line x1="16" y1="40" x2="32" y2="39" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+                        <!-- Right page lines -->
+                        <line x1="40" y1="22" x2="56" y2="24" stroke="#e8dcc8" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+                        <line x1="40" y1="30" x2="56" y2="32" stroke="#e8dcc8" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+                        <line x1="40" y1="39" x2="56" y2="40" stroke="#e8dcc8" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+                        <!-- Light rays from spine top -->
+                        <line x1="36" y1="6" x2="36" y2="0" stroke="#c9956c" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="36" y1="6" x2="29" y2="1" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+                        <line x1="36" y1="6" x2="43" y2="1" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+                        <line x1="36" y1="6" x2="23" y2="3" stroke="#c9956c" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
+                        <line x1="36" y1="6" x2="49" y2="3" stroke="#c9956c" stroke-width="0.8" stroke-linecap="round" opacity="0.3"/>
                     </g>
-                    <line x1="72" y1="22" x2="72" y2="78" stroke="#c9956c" stroke-width="1"/>
-                    <text x="88" y="48" font-family="'Crimson Pro', Georgia, serif" font-size="30" font-weight="500" fill="#2c4a5e">BrightHarbor</text>
-                    <text x="88" y="70" font-family="'Montserrat', Arial, sans-serif" font-size="10" font-weight="400" letter-spacing="4" fill="#8fa4af">PRESS</text>
+                    <!-- Vertical divider -->
+                    <line x1="90" y1="18" x2="90" y2="82" stroke="#c9956c" stroke-width="0.8" opacity="0.6"/>
+                    <!-- Brand name -->
+                    <text x="104" y="44" font-family="Cinzel, Georgia, serif" font-size="26" font-weight="600" fill="#2c4a5e" letter-spacing="1">BrightHarbor</text>
+                    <text x="104" y="66" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="400" fill="#c9956c" letter-spacing="5">PRESS</text>
                 </svg>
             </a>
             <ul class="nav-links" id="navLinks">
@@ -876,17 +891,59 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-logo">
-                <svg width="160" height="160" viewBox="0 0 160 160">
-                    <g transform="translate(10, 10)">
-                        <circle cx="70" cy="70" r="65" fill="none" stroke="#2c4a5e" stroke-width="2"/>
-                        <circle cx="70" cy="5" r="3.5" fill="#c9956c"/>
-                        <circle cx="70" cy="135" r="3.5" fill="#c9956c"/>
-                        <circle cx="5" cy="70" r="3.5" fill="#c9956c"/>
-                        <circle cx="135" cy="70" r="3.5" fill="#c9956c"/>
-                        <text x="70" y="78" text-anchor="middle" font-family="Cinzel, serif" font-size="46" font-weight="500" fill="#2c4a5e">BH</text>
-                        <line x1="35" y1="92" x2="105" y2="92" stroke="#c9956c" stroke-width="1"/>
-                        <text x="70" y="110" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="10" letter-spacing="4" fill="#8fa4af">PRESS</text>
+                <svg width="180" height="180" viewBox="0 0 180 180" aria-label="BrightHarbor Press emblem">
+                    <!-- Outer double ring border -->
+                    <circle cx="90" cy="90" r="84" fill="none" stroke="#2c4a5e" stroke-width="1.5"/>
+                    <circle cx="90" cy="90" r="77" fill="none" stroke="#c9956c" stroke-width="0.7"/>
+                    <!-- Gold ornament dots at cardinal points -->
+                    <circle cx="90" cy="7" r="3" fill="#c9956c"/>
+                    <circle cx="90" cy="173" r="3" fill="#c9956c"/>
+                    <circle cx="7" cy="90" r="3" fill="#c9956c"/>
+                    <circle cx="173" cy="90" r="3" fill="#c9956c"/>
+                    <!-- Small diamond ornaments at 45deg positions -->
+                    <polygon points="52,16 54,20 52,24 50,20" fill="#c9956c" opacity="0.55"/>
+                    <polygon points="128,16 130,20 128,24 126,20" fill="#c9956c" opacity="0.55"/>
+                    <polygon points="52,156 54,160 52,164 50,160" fill="#c9956c" opacity="0.55"/>
+                    <polygon points="128,156 130,160 128,164 126,160" fill="#c9956c" opacity="0.55"/>
+                    <!-- Curved BRIGHTHARBOR text along top inner arc -->
+                    <path id="topArcH" d="M 18,90 A 72,72 0 1,1 162,90" fill="none"/>
+                    <text font-family="Cinzel, Georgia, serif" font-size="10.5" fill="#2c4a5e" letter-spacing="3" font-weight="600">
+                        <textPath href="#topArcH" startOffset="12%">BRIGHTHARBOR</textPath>
+                    </text>
+                    <!-- Open book icon centered -->
+                    <g transform="translate(90,82)">
+                        <!-- Left page -->
+                        <path d="M0,-20 C-7,-20 -22,-17 -28,-13 L-28,18 C-22,14 -7,12 0,12 Z" fill="#2c4a5e"/>
+                        <!-- Right page -->
+                        <path d="M0,-20 C7,-20 22,-17 28,-13 L28,18 C22,14 7,12 0,12 Z" fill="#1a2a3a"/>
+                        <!-- Gold spine line -->
+                        <line x1="0" y1="-20" x2="0" y2="12" stroke="#c9956c" stroke-width="1.5"/>
+                        <!-- Left page text lines -->
+                        <line x1="-22" y1="-7" x2="-3" y2="-9" stroke="#c9956c" stroke-width="0.8" opacity="0.55"/>
+                        <line x1="-22" y1="0" x2="-3" y2="-2" stroke="#c9956c" stroke-width="0.8" opacity="0.55"/>
+                        <line x1="-22" y1="7" x2="-3" y2="6" stroke="#c9956c" stroke-width="0.8" opacity="0.35"/>
+                        <!-- Right page text lines -->
+                        <line x1="3" y1="-9" x2="22" y2="-7" stroke="#e8dcc8" stroke-width="0.8" opacity="0.3"/>
+                        <line x1="3" y1="-2" x2="22" y2="0" stroke="#e8dcc8" stroke-width="0.8" opacity="0.3"/>
+                        <line x1="3" y1="6" x2="22" y2="7" stroke="#e8dcc8" stroke-width="0.8" opacity="0.2"/>
+                        <!-- Light rays from top of spine -->
+                        <line x1="0" y1="-22" x2="0" y2="-31" stroke="#c9956c" stroke-width="1.5" stroke-linecap="round"/>
+                        <line x1="0" y1="-22" x2="-7" y2="-30" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.65"/>
+                        <line x1="0" y1="-22" x2="7" y2="-30" stroke="#c9956c" stroke-width="1" stroke-linecap="round" opacity="0.65"/>
+                        <line x1="0" y1="-22" x2="-12" y2="-27" stroke="#c9956c" stroke-width="0.7" stroke-linecap="round" opacity="0.35"/>
+                        <line x1="0" y1="-22" x2="12" y2="-27" stroke="#c9956c" stroke-width="0.7" stroke-linecap="round" opacity="0.35"/>
                     </g>
+                    <!-- Decorative rule with dot ends -->
+                    <line x1="50" y1="116" x2="130" y2="116" stroke="#c9956c" stroke-width="0.8"/>
+                    <circle cx="46" cy="116" r="1.5" fill="#c9956c"/>
+                    <circle cx="134" cy="116" r="1.5" fill="#c9956c"/>
+                    <!-- PRESS text -->
+                    <text x="90" y="132" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="9" font-weight="600" fill="#8fa4af" letter-spacing="5">PRESS</text>
+                    <!-- Curved EST. MMXXVI text along bottom arc -->
+                    <path id="bottomArcH" d="M 32,130 A 63,63 0 0,0 148,130" fill="none"/>
+                    <text font-family="Montserrat, Arial, sans-serif" font-size="7.5" fill="#c9956c" letter-spacing="1.5">
+                        <textPath href="#bottomArcH" startOffset="12%">· EST · MMXXVI ·</textPath>
+                    </text>
                 </svg>
             </div>
             <span class="section-label">Welcome to</span>
