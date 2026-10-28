@@ -1049,7 +1049,7 @@
                 <div class="book-card">
                     <a href="https://www.amazon.com/How-Inconvenient-Book-Beautifully-Broken/dp/B0HHTWLKWX/" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block;">
                         <div class="book-cover" style="background: none;">
-                            <img src="https://m.media-amazon.com/images/W/BW_MEDIAX_AVIF_MEASUREMENT_1306696-T2/images/I/71PujuwhSiL._SY425_.jpg" alt="How Inconvenient by Tessa Taylor" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
+                            <img src="how-inconvenient-cover.jpg" alt="How Inconvenient by Tessa Taylor" style="width: 100%; height: 100%; object-fit: cover; border-radius: 4px;">
                         </div>
                         <h4>How Inconvenient</h4>
                         <p class="author">by Tessa Taylor</p>
@@ -1073,7 +1073,7 @@
                             <svg viewBox="0 0 24 24">
                                 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
-                            <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="3e565b5252517e5c4c5759564a565f4c5c514c4e4c5b4d4d105d5153">[email&#160;protected]</a>
+                            <a href="mailto:hello@brightharborpress.com">hello@brightharborpress.com</a>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24">
@@ -1087,11 +1087,63 @@
                 <div class="newsletter">
                     <h3>Stay Updated</h3>
                     <p>Subscribe to our newsletter for new releases, author interviews, and exclusive content.</p>
-                    <form class="newsletter-form">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <button type="submit">Subscribe</button>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="text" name="name" id="nlName" placeholder="Your Name" autocomplete="name" required>
+                        <input type="email" name="email" id="nlEmail" placeholder="Your Email" autocomplete="email" required>
+                        <button type="submit" id="nlSubmit">Subscribe</button>
                     </form>
+                    <p id="nlStatus" role="status" aria-live="polite" style="margin-top:1rem;font-size:0.95rem;min-height:1.4em;"></p>
+                    <script>
+                    (function () {
+                        // Paste your form endpoint here (Formspree, Buttondown, Mailchimp, etc.).
+                        // While this is empty, sign-ups open a pre-filled email instead, so no address is lost.
+                        var NEWSLETTER_ENDPOINT = '';
+                        var LIST_EMAIL = 'hello@brightharborpress.com';
+
+                        var form = document.getElementById('newsletterForm');
+                        var statusEl = document.getElementById('nlStatus');
+                        var btn = document.getElementById('nlSubmit');
+                        if (!form) return;
+
+                        function say(msg, ok) {
+                            statusEl.textContent = msg;
+                            statusEl.style.color = ok ? '#2c6e4f' : '#a33';
+                        }
+
+                        form.addEventListener('submit', function (e) {
+                            e.preventDefault();
+                            var name = document.getElementById('nlName').value.trim();
+                            var email = document.getElementById('nlEmail').value.trim();
+
+                            if (!name) { say('Please add your name.', false); return; }
+                            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { say('Please check that email address.', false); return; }
+
+                            btn.disabled = true;
+                            say('Signing you up…', true);
+
+                            if (!NEWSLETTER_ENDPOINT) {
+                                window.location.href = 'mailto:' + LIST_EMAIL +
+                                    '?subject=' + encodeURIComponent('Newsletter sign-up') +
+                                    '&body=' + encodeURIComponent('Please add me to the BrightHarbor Press newsletter.\n\nName: ' + name + '\nEmail: ' + email);
+                                say('Opening your email app to confirm — just hit send.', true);
+                                btn.disabled = false;
+                                return;
+                            }
+
+                            fetch(NEWSLETTER_ENDPOINT, {
+                                method: 'POST',
+                                headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+                                body: JSON.stringify({ name: name, email: email })
+                            }).then(function (r) {
+                                if (!r.ok) throw new Error('bad status');
+                                form.reset();
+                                say('You\u2019re on the list. Thanks!', true);
+                            }).catch(function () {
+                                say('Something went wrong \u2014 email ' + LIST_EMAIL + ' and we\u2019ll add you.', false);
+                            }).then(function () { btn.disabled = false; });
+                        });
+                    })();
+                    </script>
                 </div>
             </div>
         </div>
@@ -1166,8 +1218,8 @@
             </div>
         </div>
     </footer>
+    <script>
     
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -1201,4 +1253,7 @@
             });
         });
         
-        // Form submission (placeholde
+        // Newsletter submission is handled next to the form, in the contact section.
+    </script>
+</body>
+</html>
